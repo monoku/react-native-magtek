@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		667EFF30212B0F2600506290 /* libMTSCRA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667EFF2F212B0F2600506290 /* libMTSCRA.a */; };
 		B3E7B58A1CC2AC0600A0062D /* RNMagtek.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNMagtek.m */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNMagtek.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNMagtek.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		667EFF2E212B0F2600506290 /* MTSCRA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSCRA.h; sourceTree = "<group>"; };
+		667EFF2F212B0F2600506290 /* libMTSCRA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMTSCRA.a; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNMagtek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNMagtek.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNMagtek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNMagtek.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				667EFF30212B0F2600506290 /* libMTSCRA.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,10 +54,28 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				667EFF2D212B0EFC00506290 /* Magtek */,
 				B3E7B5881CC2AC0600A0062D /* RNMagtek.h */,
 				B3E7B5891CC2AC0600A0062D /* RNMagtek.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				667EFF31212B0F3B00506290 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		667EFF2D212B0EFC00506290 /* Magtek */ = {
+			isa = PBXGroup;
+			children = (
+				667EFF2F212B0F2600506290 /* libMTSCRA.a */,
+				667EFF2E212B0F2600506290 /* MTSCRA.h */,
+			);
+			path = Magtek;
+			sourceTree = "<group>";
+		};
+		667EFF31212B0F3B00506290 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,12 +226,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
+					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Magtek",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNMagtek;
 				SKIP_INSTALL = YES;
@@ -225,7 +250,10 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Magtek",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNMagtek;
 				SKIP_INSTALL = YES;
