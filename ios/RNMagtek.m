@@ -16,8 +16,12 @@ RCT_EXPORT_MODULE();
     
 - (void) devConnStatusChange {
     BOOL isDeviceConnected = [self.lib isDeviceConnected];
-    [self sendEventWithName:@"devConnectionNotification" body:@{@"isDeviceConnected": @(isDeviceConnected)}];
-}
+    BOOL isDeviceOpenend = [self.lib isDeviceOpened];
+    if (!isDeviceConnected && !self.lib.isDeviceOpened) {
+        [self.lib closeDevice];
+    }
+    [self sendEventWithName:@"devConnectionNotification" body:@{@"isDeviceOpenend": @(isDeviceOpenend), @"isDeviceConnected": @(isDeviceConnected)}];
+}   
 
 RCT_EXPORT_METHOD(connect:(RCTResponseSenderBlock)callback) {
     // Init MTSCRA lib
@@ -31,8 +35,6 @@ RCT_EXPORT_METHOD(connect:(RCTResponseSenderBlock)callback) {
     // Open device
     if (!self.lib.isDeviceOpened ) {
         [self.lib openDevice];
-    } else {
-        [self.lib closeDevice];
     }
     if (self.lib.getDeviceType == MAGTEKAUDIOREADER) {
         MPMusicPlayerController *musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
