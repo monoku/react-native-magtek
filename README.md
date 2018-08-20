@@ -47,16 +47,16 @@
 import RNMagtek, { RNMagtekEventsEmitter } from 'react-native-magtek';
 
 RNMagtek.connect((data) => {
-	const { isDeviceConnected, isDeviceOpened } = data;
-	if (isDeviceConnected && isDeviceOpened) {
-		console.log("Card reader is connected and ready!!!");
-	}
+  const { isDeviceConnected, isDeviceOpened } = data;
+  if (isDeviceConnected && isDeviceOpened) {
+    console.log("Card reader is connected and ready!!!");
+  }
 });
 
 RNMagtekEventsEmitter.addListener('devConnectionNotification', (data) => {
-	const { isDeviceConnected } = data;
-	if (!isDeviceConnected) {
-		console.log("Opps! Device have been disconnected.");
-	}
+  const { isDeviceConnected } = data;
+  if (!isDeviceConnected) {
+    console.log("Opps! Device have been disconnected.");
+  }
 });
 ```
