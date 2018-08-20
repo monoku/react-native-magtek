@@ -44,8 +44,19 @@
 
 ## Usage
 ```javascript
-import RNMagtek from 'react-native-magtek';
+import RNMagtek, { RNMagtekEventsEmitter } from 'react-native-magtek';
 
-// TODO: What to do with the module?
-RNMagtek;
+RNMagtek.connect((data) => {
+	const { isDeviceConnected, isDeviceOpened } = data;
+	if (isDeviceConnected && isDeviceOpened) {
+		console.log("Card reader is connected and ready!!!");
+	}
+});
+
+RNMagtekEventsEmitter.addListener('devConnectionNotification', (data) => {
+	const { isDeviceConnected } = data;
+	if (!isDeviceConnected) {
+		console.log("Opps! Device have been disconnected.");
+	}
+});
 ```
