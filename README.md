@@ -44,7 +44,7 @@
 
 ## Usage
 ```javascript
-import RNMagtek, { RNMagtekEventsEmitter } from 'react-native-magtek';
+import RNMagtek, { RNMagtekEventsEmitter } from '@monoku/react-native-magtek';
 
 RNMagtek.connect((data) => {
   const { isDeviceConnected, isDeviceOpened } = data;
