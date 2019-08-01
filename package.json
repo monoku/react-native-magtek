@@ -1,7 +1,7 @@
 
 {
   "name": "@monoku/react-native-magtek",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "MagTek iOS library for React Native",
   "main": "index.js",
   "scripts": {
