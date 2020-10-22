@@ -1,7 +1,6 @@
-
 {
   "name": "@monoku/react-native-magtek",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "MagTek iOS library for React Native",
   "main": "index.js",
   "scripts": {
@@ -10,10 +9,18 @@
   "keywords": [
     "react-native"
   ],
-  "author": "",
-  "license": "",
+  "author": "dev@monoku.com",
+  "license": "MIT",
   "peerDependencies": {
     "react-native": "^0.41.2",
     "react-native-windows": "0.41.0-rc.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monoku/react-native-magtek.git"
+  },
+  "bugs": {
+    "url": "https://github.com/monoku/react-native-magtek/issues"
+  },
+  "homepage": "https://github.com/monoku/react-native-magtek#readme"
 }
