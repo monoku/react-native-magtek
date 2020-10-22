@@ -1,10 +1,19 @@
-# react-native-magtek
+# react-native-magtek (iOS Only)
 
 ## Getting started
 `$ npm install @monoku/react-native-magtek --save`
 
-### Mostly automatic installation
+### Using React-Native Link
 `$ react-native link @monoku/react-native-magtek`
+
+#### Using cocoapods
+Add the following lines in your `Podfile`
+```ruby
+  pod 'MTSCRA', path: '../node_modules/@monoku/react-native-magtek/ios/Magtek'
+  pod 'RNMagtek', path: '../node_modules/@monoku/react-native-magtek/ios'
+```
+and then run `pod install`.
+
 ### Manual installation
 
 #### iOS
